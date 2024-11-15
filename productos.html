@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Shop - Detalle del Producto</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid contNav">
+            <a class="navbar-brand" href="#">Sweet Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon light"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#productos">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#acerca">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+                <!-- Formulario de búsqueda -->
+                <form class="d-flex ms-4 btn-lg">
+                    <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar" />
+                    <button class="btn btn-detalle" type="submit">Buscar</button>
+
+                    <!-- Icono cart -->
+                    <a href="/inicioSesion.html" class="ms-3"><i class="fa-solid fa-cart-shopping fs-1 mt-2 ms-4"></i>
+                    </a>
+                    <!-- Ícono de user -->
+                    <a href="/inicioSesion.html" class="ms-3"><i class="fa-solid fa-user fs-1 mt-2 ms-4"></i></a>
+
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Productos Destacados -->
+    <section id="productos" class="py-5">
+        <div class="container-fluid">
+            <h2 class="text-center mb-5">Nuestros Bombones Destacados</h2>
+            <div class=" row justify-content-center">
+                <!-- Producto 1 -->
+                <div class="col-12 col-sm-8 col-md-6 col-lg-3 d-flex justify-content-center mb-4">
+                    <div class="card product-card">
+                        <img src="img/bombon_1.png" class="card-img-top" alt="Bombón 1" />
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Chocolate Oscuro con Almendras</h5>
+                            <button class="btn btn-detalle">Comprar
+                                <!-- Icono cart -->
+                                <a href="carrito.html">
+                                    <i class="fa-solid fa-cart-shopping fs-5 mt-2 ms-4"></i>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Producto 2 -->
+                <div class="col-12 col-sm-8 col-md-6 col-lg-3 d-flex justify-content-center mb-4">
+                    <div class="card product-card">
+                        <img src="img/bombon_2.png" class="card-img-top" alt="Bombón 2" />
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Caramelo Salado y Chocolate con Leche</h5>
+
+                            <button class="btn btn-detalle">Comprar
+                                <!-- Icono cart -->
+                                <a href="carrito.html">
+                                    <i class="fa-solid fa-cart-shopping fs-5 mt-2 ms-4"></i>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Producto 3 -->
+                <div class="col-12 col-sm-8 col-md-6 col-lg-3 d-flex justify-content-center mb-4">
+                    <div class="card product-card">
+                        <img src="img/bombon_3.png" class="card-img-top" alt="Bombón 3" />
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Trufa de Chocolate Blanco con Frambuesa</h5>
+                            <button class="btn btn-detalle">Comprar
+                                <!-- Icono cart -->
+                                <a href="carrito.html">
+                                    <i class="fa-solid fa-cart-shopping fs-5 mt-2 ms-4"></i>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Producto 4 -->
+                <div class="col-12 col-sm-8 col-md-6 col-lg-3 d-flex justify-content-center mb-4">
+                    <div class="card product-card">
+                        <img src="img/bombon_4.png" class="card-img-top" alt="Bombón 3" />
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Café Espresso y Chocolate Amargo</h5>
+                            <button class="btn btn-detalle">Comprar
+                                <!-- Icono cart -->
+                                <a href="carrito.html">
+                                    <i class="fa-solid fa-cart-shopping fs-5 mt-2 ms-4"></i>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=" row align-items-center">
+                <!-- Producto 5 -->
+                <div class="col-12 col-sm-8 col-md-6 col-lg-3 d-flex justify-content-center mb-4">
+                    <div class="card product-card">
+                        <img src="img/bombon_5.png" class="card-img-top" alt="Bombón 3" />
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Menta y Chocolate Oscuro</h5>
+                            <button class="btn btn-detalle">Comprar
+                                <!-- Icono cart -->
+                                <a href="carrito.html">
+                                    <i class="fa-solid fa-cart-shopping fs-5 mt-2 ms-4"></i>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Producto col-12 -->
+                <div class="col-12 col-sm-8 col-md-6 col-lg-3 d-flex justify-content-center mb-4">
+                    <div class="card product-card">
+                        <img src="img/bombon_6.png" class="card-img-top" alt="Bombón 3" />
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Menta y Chocolate Oscuro</h5>
+
+                            <button class="btn btn-detalle">Comprar
+                                <!-- Icono cart -->
+                                <a href="carrito.html">
+                                    <i class="fa-solid fa-cart-shopping fs-5 mt-2 ms-4"></i>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Producto 7-->
+                <div class="col-12 col-sm-8 col-md-6 col-lg-3 d-flex justify-content-center mb-4">
+                    <div class="card product-card">
+                        <img src="img/bombon_6.png" class="card-img-top" alt="Bombón 3" />
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Menta y Chocolate Oscuro</h5>
+
+                            <button class="btn btn-detalle">Comprar
+                                <!-- Icono cart -->
+                                <a href="carrito.html">
+                                    <i class="fa-solid fa-cart-shopping fs-5 mt-2 ms-4"></i>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Producto 8 -->
+                <div class="col-12 col-sm-8 col-md-6 col-lg-3 d-flex justify-content-center mb-4">
+                    <div class="card product-card">
+                        <img src="img/bombon_6.png" class="card-img-top" alt="Bombón 3" />
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Menta y Chocolate Oscuro</h5>
+                            <button class="btn btn-detalle">Comprar
+                                <!-- Icono cart -->
+                                <a href="carrito.html">
+                                    <i class="fa-solid fa-cart-shopping fs-5 mt-2 ms-4"></i>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p class="footer-text mb-0">&copy; 2024 Sweet Shop. Todos los derechos reservados.</p>
+            <p class="footer-text">Síguenos en:
+                <a href="#" class="text-light mx-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-light mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-light mx-2"><i class="fab fa-instagram"></i></a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
