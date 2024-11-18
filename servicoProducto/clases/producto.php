@@ -14,10 +14,11 @@ class Producto{
             return $consulta;
         }catch(PDOException $e){
             $dato= "¡Error!: " . $e->getMessage() . "<br/>";
-            require "vistas/mensaje.php";
+            require __DIR__ . "/../../vistas/mensaje.php";
             die();
         }
     }
+
 
     function buscar ($link){
 		try{
