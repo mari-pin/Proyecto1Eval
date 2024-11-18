@@ -1,0 +1,102 @@
+/* Estilo adicional para el formulario de inicio de sesión */
+body {
+    background-color: #f8f2e7; /* Fondo claro */
+    font-family:'opens sans', sans-serif;/* Fuente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #a47760;
+    font-size: 20px;
+    width: 70%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 5px solid #ccc;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+    
+
+form div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color:#f8f2e7;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    background-color: #a47760;
+    font-size: 20px;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 3px solid #ccc;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: #f8f2e7;
+}
+
+.login-container h2 {
+    color: #5c3d2e;
+    font-size: 50px;
+}
+.login-container p a{
+    color: #eea45b;
+    font-weight: 600;
+  
+    
+}
+form button a{
+    
+    font-weight: 600;
+    color: #eea45b;
+}
+/* estilo de todos los botones */
+.btn-detalle {  
+    
+    background-color: #5c3d2e;
+    color: #fffefe;
+    border: 2px solid #fffefe;
+    padding: 10px 20px;
+    margin:auto;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+  
+    
+
+}
+
+.btn-detalle:hover {
+    transition: color 0.3s ease, background-color 0.3s ease;
+    background-color: #a47760;
+    color: #5c3d2e;
+    font-weight: bold;
+    border: 5px solid #fffefe;
+   
+}
+
+.btn-outline-dark {
+    color: #5c3d2e;
+    border-color: #5c3d2e;
+}
+
+.btn-outline-dark:hover {
+    color: #fff;
+    background-color: #5c3d2e;
+    border-color: #5c3d2e;
+}
