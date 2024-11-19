@@ -4,7 +4,7 @@
 }
 .body{
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   min-height: 100vh;
  
 }
@@ -15,14 +15,14 @@
 }
 
 .navbar-brand {
-    font-size: 60px;
+    font-size: 40px;
     font-weight: bold;
     color: #48372e;
     /* Color del texto */
 }
 
 .navbar-toggler-icon {
-    color: #fffefe;
+    color: #fffefe !important;
 }
 
 .navbar-toggler {
@@ -32,7 +32,7 @@
 }
 
 .form-control {
-    font-size: 30px;
+    font-size: 15px;
     border: 5px solid #5c3d2e;
     margin-top: 10px;
 
@@ -47,25 +47,23 @@
 }
 
 .nav-link {
-    font-size:40px;
+    font-size:20px;
     margin-left: 20px;
 
 }
-
+  /* Hover en los links */
 .nav-link:hover {
-    color: #eea45b;
-    /* Hover en los links */
+    color: #e0780f;
     font-weight: 700;
 }
-
+  /* Iconos del menú */
 .fa-cart-shopping,.fa-magnifying-glass,
 .fa-user, .fa-user-plus {
    background-color: #5c3d2e;
-   padding: 15px;
+   padding: 8px;
     border-radius: 50%;
     color: #eea45b;
-    /* Iconos del menú */
-    font-size: 30px;
+    font-size: 15px;
 }
 /* Estilo para el texto de registro */
 .registro-link {
@@ -83,9 +81,9 @@
   padding: 5px 0;
   position: absolute;
   z-index: 1;
-  bottom: 125%; /* Posición del texto */
+  bottom: 125%; /* posición del texto */
   left: 50%;
-  margin-left: -40px; /* Centrar el texto */
+  margin-left: -40px; /*texto centrdo*/
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -94,12 +92,12 @@
   visibility: visible;
   opacity: 1;
 }
-
+ /* Imagen del banner */
 .banner {
     background-image: url('../img/img_portada.jpg');
-    /* Imagen del banner */
     background-size: cover;
     background-position: center;
+    margin-top: 10px;
     height: 60vh;
     color: #48372e;
     display: flex;
@@ -107,7 +105,7 @@
     justify-content: center;
     text-align: center;
 }
-
+/* enlace pag principal de texto */
 .aqui {
     color: #eea45b;
     font-size: 40px;
@@ -122,72 +120,18 @@
 }
 
 .img_unitarios:hover p {
+    background-color: #5c3d2e;
+    border-radius: 10px;
     visibility: visible;
     color: #eea45b;
-
-    font-size: 30px;
+    font-size: 20px;
     text-decoration: none;
     text-transform: capitalize;
-    transform: scale(1.1);
-}
-
-/* imagem_chocolate fundido */
-.div_imgs_inicio {
-    position: relative;
-    height: 60vh;
-    width: 100%;
-    overflow: hidden;
-}
-
-.div_imgs_inicio::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url('img/510.jpg');
-    background-size: cover;
-    background-position: center;
-    transform: rotate(10deg);
-    /* Ajusta el ángulo de rotación aquí */
-    z-index: -1;
-    /* Coloca la imagen detrás del contenido */
+    transform: scale(0.5);
+    transition: transform 0.9s ease-in-out;
 }
 
 
-.rh2 {
-    width: 100%;
-
-
-
-}
-
-.rowimg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-
-
-}
-
-.divimg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 25px;
-
-
-}
-
-.textoPrincipal {
-    font-size: 30px;
-
-
-}
 /* estilo de todos los botones */
 .btn-detalle {
     background-color: #5c3d2e;
@@ -198,7 +142,7 @@
     cursor: pointer;
     font-size: 20px;
     border-radius: 10px;
-    width: 300px;
+    width: 100%;
     height:max-content;
 
 }
@@ -212,87 +156,100 @@
    
 }
 
-
-
 /* footer */
 .footer {
     width: 100%;
     margin-top: auto;
     background-color: #5c3d2e;
     color: #f8f2e7;
-    padding: 20px 0;
+    padding: 10px 0;
+
+    
 }
 .footer-text {
-  min-width: 100%;
+    min-width: 100%;
     text-align: center;
-    font-size: 20px;
+    font-size: 15px;
     color: #fffefe;
 }
 
 
 /* PAGINA DETALLE PRODUCTO */
 /* Contenedor principal del carrusel */
+.container_section{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  min-height: 100vh;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+  
+
 .carousel-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    margin: auto;
-    border-radius: 30px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  max-height: 100%;
+  width: 80%;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Imágenes del carrusel */
 .carousel-slide {
-    display: flex;
-    width: 450%;
-    transition: transform 0.5s ease-in-out;
+  display: flex;
+  width: 450%;
+  transition: transform 0.5s ease-in-out;
 }
 
 .carousel-slide img {
-    width: 100%;
-    height: auto;
+  width: 50%;
+  height: 50%;
 
 }
 
 /* Ocultar radio buttons */
 input[type="radio"] {
-    display: none;
+  display: none;
 }
 
 
 /* Estilos para los indicadores */
 .carousel-nav {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .carousel-nav label {
-    width: 200px;
-    height: 30px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 5px;
-    cursor: pointer;
+  width: 200px;
+  height: 30px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
 }
 
 /* cada imagen para que las pase una a una xk ocupan el 100% del contenedor */
 #radio1:checked~.carousel-slide {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 #radio2:checked~.carousel-slide {
-    transform: translateX(-25%);
+  transform: translateX(-25%);
 }
 
 #radio3:checked~.carousel-slide {
-    transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 #radio4:checked~.carousel-slide {
-    transform: translateX(-75%);
+  transform: translateX(-75%);
 }
 
 /* Cambiar color del indicador activo */
@@ -300,112 +257,110 @@ input[type="radio"] {
 #radio2:checked~.carousel-nav label[for="radio2"],
 #radio3:checked~.carousel-nav label[for="radio3"],
 #radio4:checked~.carousel-nav label[for="radio4"] {
-    background-color: #5c3d2e;
+  background-color: #5c3d2e;
 }
 
 /* texto detalle producto */
 
 .detalle_pro_text{
-    color: #5c3d2e;
-    margin-top: 20px;
-    padding-left: 20px ;
+  color: #5c3d2e;
+  margin-top: 20px;
+  padding-left: 20px ;
+  width: 50%;
+  height: 40%;
 
 }
 .detalle_pro_text h2{
-    font-size: 50px;
-    font-weight: bold;
-    text-align: center;
-    
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  
 }
 
 /* contador para añadir productos detalle producto */
 .quantity-container {
-    margin-top: 15px;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 20px;
+  margin-top: 15px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 5px;
 }
 
 .quantity-btn {
-    background-color: #ff8c00; /* Color del botón */
-    border: none;
-    color: white;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+  background-color: #ff8c00; /* Color del botón */
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .quantity-btn:hover {
-    background-color: #e67e22; /* Color en hover */
+  background-color: #e67e22; /* Color en hover */
 }
 
 #quantity {
-    width: 50px;
-    text-align: center;
-    font-size: 18px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 5px;
+  width: 50px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px;
 }
-
-
 /* PAGINA  DE PRODUCTOS */
 
 /* estilo cards */
 .card-title {
-    font-size: 30px;
+  font-size: 25px;
 }
 
 .card-text {
-    font-size: 25px;
+  font-size: 5px;
 }
 
-.text-muted {
-    font-size: 20px;
-}
+
 
 .product-card {
-    min-width: 100%;
-    text-align: center;
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #5c3d2e;
-    border-radius: 10px;
-    background-color: #f8f2e7;
-    box-shadow: 5px 5px 5px #5c3d2e;
+  min-width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #5c3d2e;
+  border-radius: 10px;
+  background-color: #f8f2e7;
+  box-shadow: 5px 5px 5px #5c3d2e;
 }
 
 .product-card img {
-    width: 100%;
-    object-fit: cover;
+  width: 80%;
+  object-fit: cover;
 }
 .card-body{
-    width: 100%;
-    object-fit: cover;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  object-fit: cover;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
 
 }
 .card-body~button{
-    margin-top: 20px;
-    width: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin-top: 20px;
+  width: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 /* PAGINA DE CARRITO */
 /* Estilo general del carrito */
 

@@ -16,57 +16,60 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Enlace al archivo CSS -->
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="/estilos/style2.css">
 </head>
 
 <body class="body_carrito">
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid contNav">
-            <a class="navbar-brand" href="#">Sweet Shop</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon light"></span>
-            </button>
-            <div class="collapse navbar-collapse flex-wrap" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#productos">Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#acerca">Acerca de</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contacto">Contacto</a>
-                    </li>
-                </ul>
-                <!-- Formulario de búsqueda -->
-                <form class="d-flex ms-4 btn-lg">
-                    <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar" />
-                    <a href="productos.html" class="ms-3">
-                        <i class="fa-solid fa-magnifying-glass fs-1 mt-2 ms-4"></i>
-                    </a>
-                    <!--           <button class="btn btn-detalle" type="submit">Buscar</button>
- -->
-                    <!-- Icono cart -->
-                    <a href="carrito.html" class="ms-3"><i class="fa-solid fa-cart-shopping fs-1 mt-2 ms-4"></i>
-                    </a>
-                    <!-- Ícono de user -->
-                    <a href="inicioSesion.html" class="ms-3"><i class="fa-solid fa-user fs-1 mt-2 ms-4"></i></a>
-                    <!-- Enlace de registro -->
-                    <a href="registro.html" class="ms-3">
-                        <i class="fa-solid fa-user-plus fs-1 mt-2 ms-4"></i>
-                        <span class="registro-text">Registro</span>
-                    </a>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid contNav">
+      <a class="navbar-brand" href="/index2.html">Sweet Shop</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <div class="collapse navbar-collapse flex-wrap" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index2.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/vistas/productos.html">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/../index2.html">Acerca de</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#footer">Contacto</a>
+          </li>
+        </ul>
+        <!-- Formulario de búsqueda -->
+        <form class="d-flex ms-4 flex-wrap flex-lg-nowrap">
+          <input class="form-control me-2 mb-2 mb-lg-0 mb-0 " type="search" placeholder="Buscar" aria-label="Buscar" />
 
-                </form>
-            </div>
-        </div>
-    </nav>
+          <!-- Icono cart -->
+          <a href="/vistas/detalle.html" class="ms-3  mb-2 mb-lg-0">
+            <i class="fa-solid fa-magnifying-glass
+            fs-5 mt-4 ms-4"></i>
+          </a>
+          <!-- Ícono de user -->
+          <a href="/vistas/inicioSesion.html" class="ms-3 mb-2 mb-lg-0">
+            <i class="fa-solid fa-user fs-5 mt-4 ms-4"></i></a>
+          <!-- Enlace de registro -->
+          <a href="/vistas/registro.html" class="ms-3 mb-2 mb-lg-0">
+            <i class="fa-solid fa-user-plus fs-5 mt-4 ms-4"></i>
+            <span class="registro-text">Registro</span>
+          </a>
+          <a href="/vistas/carrito.html" class="ms-3 mb-2 mb-lg-0">
+            <i class="fa-solid fa-cart-shopping fs-5 mt-4 ms-4"></i>
+            <span class="registro-text">Carrito</span>
+          </a>
+
+        </form>
+      </div>
+    </div>
+  </nav>
 
 
     <section class="section_carrito">
@@ -85,31 +88,59 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Ejemplo de una línea de producto -->
+                    <!--línea de un producto -->
                     <tr>
                         <td>Bombón de Chocolate Puro</td>
                         <td>
                             <div class="input-group div_cantidad">
-                                <input type="number" class="form-control text-center" value="1" min="1" readonly>
+                                <input type="number" class="form-control text-center" value="1" min="1">
                             </div>
                         </td>
                         <td>$5.00</td>
                         <td>$5.00</td>
                     </tr>
+                    <tr>
+                      <td>Bombón de Chocolate Puro</td>
+                      <td>
+                          <div class="input-group div_cantidad">
+                              <input type="number" class="form-control text-center" value="1" min="1">
+                          </div>
+                      </td>
+                      <td>$5.00</td>
+                      <td>$5.00</td>
+                  </tr>
 
                     <!-- Más líneas de productos aquí -->
-                    <!-- Ejemplo de una línea de producto -->
+                
 
                 </tbody>
             </table>
 
-            <!-- Botones de acción -->
+            <!-- Botones-->
             <div class="text-center mt-4 row w-100 div_btnes_carrito">
                 <button class="btn btn-primary me-2 col-3"><a href="confirmar_pedido.php">Confirmar Pedido</a></button>
                 <button class="btn btn-success col-3"><a href="productos.html">Seguir Comprando</a></button>
             </div>
         </section>
     </section>
+  <!-- Footer -->
+  <footer class="footer text-center" id="contacto">
+    <div class="container">
+      <p class="footer-text mb-0">
+        &copy; 2024 Sweet Shop. Todos los derechos reservados.
+      </p>
+      <p class="footer-text">
+        Ubicación: Calle Lopez num.35 40430 Valencia<br>
+        Contacto: 655522881<br>
+        Email: SweetShop@gmail.com<br>
+        Síguenos en:
+        <a href="#" class="text-light mx-2"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-light mx-2"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-light mx-2"><i class="fab fa-instagram"></i></a>
+      </p>
+    </div>
+  </footer>
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -42,8 +42,8 @@ class Carrito{
         }
     }
 
-    public function guardar(){
+/*     public function guardar(){
         $_SESSION['idCarrito'] = $this->idCarrito;
         $_SESSION['id']
-    }
+    } */
 }

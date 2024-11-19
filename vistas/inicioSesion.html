@@ -21,26 +21,26 @@
    
 
 <!-- Formulario de Inicio de Sesión -->
-<div class="login-container text-center p-4 border rounded shadow vh-100">
+<div class="login-container text-center p-4 border rounded shadow">
     <h2 class="mb-4">Iniciar Sesión</h2>
     
     <!-- Formulario de Autenticación -->
-    <form action="../servicioCliente/validar.php" method="POST">
+    <form action="../servicioCliente/validar.php" method="get">
         <div class="mb-3">
-            <label for="email" class="form-label fs-3">Correo Electrónico</label>
-            <input type="email" class="form-control fs-3" id="email" name="email" placeholder="correo@ejemplo.com" required>
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="correo@ejemplo.com" required>
         </div>
         <div class="mb-3">
-            <label for="password" class="form-label fs-3">Contraseña</label>
-            <input type="password" class="form-control fs-3" id="password" name="pwd" placeholder="••••••••" required>
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="password" name="pwd" placeholder="••••••••" required>
         </div>
-        <button type="submit" name="enviar" class="btn btn-detalle  mt-3 fs-2">Iniciar Sesión</button>
+        <button type="submit" name="enviar" class="btn btn-detalle mt-3 ">Iniciar Sesión</button>
     </form>
 
     <!-- Opción para iniciar sesión con Google -->
     <div class="my-3">
         <p class="text-muted">Inicia sesión con</p>
-        <button class="btn btn-outline-dark w-100 fs-2"><i class="fab fa-google me-2"></i>Continuar con Google</button>
+        <button class="btn btn-outline-dark w-100 fs-5"><i class="fab fa-google me-2"></i>Continuar con Google</button>
     </div>
     
     <!-- Enlace para registrarse -->
