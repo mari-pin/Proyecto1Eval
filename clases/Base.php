@@ -1,15 +1,15 @@
 <?php
 include "../config/config.php";
-class BD{
+class Base{
     private $link;
 
     function __construct(){
         try {
-            $this-> link = new PDO("mysql:host=".HOST."dbname=".BASE, USUARIO, PASS, OPCIONES);
+            $this-> link = new PDO("mysql:host=".HOST.";dbname=".BASE, USUARIO, PASS, OPCIONES);
         
         } catch(PDOException $e){
 			$dato= "¡Error!: " . $e->getMessage() . "<br/>";
-			require "vistas/mensaje.php";
+			require "../vistas/mensaje.php";
 			die();
 		}
  		

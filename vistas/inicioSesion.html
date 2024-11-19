@@ -25,16 +25,16 @@
     <h2 class="mb-4">Iniciar Sesión</h2>
     
     <!-- Formulario de Autenticación -->
-    <form action="../servicioCliente/validar.php" method="get">
+    <form  action="../controladores/inicioSesion.php" method="post">
         <div class="mb-3">
-            <label for="email" class="form-label">Correo Electrónico</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="correo@ejemplo.com" required>
+            <label for="email" class="form-label">Dni Cliente</label>
+            <input type="text" class="form-control" id="email" name="dniCliente" placeholder="DNI" required>
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Contraseña</label>
             <input type="password" class="form-control" id="password" name="pwd" placeholder="••••••••" required>
         </div>
-        <button type="submit" name="enviar" class="btn btn-detalle mt-3 ">Iniciar Sesión</button>
+        <input type="submit" name="enviar" class="btn btn-detalle mt-3" value="Iniciar Sesion">
     </form>
 
     <!-- Opción para iniciar sesión con Google -->
