@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . "/../config/config.php";
+include __DIR__ . "../config/config.php";
 
 class Base{
     private $link;
