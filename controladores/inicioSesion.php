@@ -6,17 +6,25 @@ include "../vistas/vistParcialFormulario.html";
 $base = new Base();
 
 if(isset($_POST['enviar'])){
+    $cli= new Cliente("dniCliente", "", "", "","pwd");
+    
+    var_dump($_POST['dniCliente'], $_POST['pwd']);
+    $cli->buscar($base->link);
+    $_SESSION['nombre'] = $_POST['nombre'];
 
     $resultado = json_decode(file_get_contents("http://localhost/Proyecto/servicioCliente/validar.php?dniCliente=".$_POST['dniCliente']."&pwd=".$_POST['pwd']),true);
-echo $resultado;
-    if ($resultado) {
+
+var_dump($resultado);
+    if (isset($_POST['dniCliente'], $_POST['pwd'])) {
+        echo "entro en el if";
         // Crear sesiones
         $_SESSION['email'] = $resultado['email'];
         $_SESSION['pwd'] = $resultado['pwd'];
         $_SESSION['nombre'] = $resultado['nombre'];
-
+        include "../vistas/iniParcialProductos.html";
         // Redirigir a inicio
-        header("Location:../vistas/index2.html");
+        header("Location:principal.php");
+      
         exit();
         
     } else {

@@ -27,6 +27,7 @@ $resultado= json_decode(file_get_contents("http://localhost/Proyecto/servicoProd
       echo '<div class="card product-card">';
       echo '<img src="' . htmlspecialchars($producto['foto']) . '" class="card-img-top" alt="" />';
       echo '<div class="card-body text-center">';
+      echo '<a href="detalle.php">ver detalle</a>';
       echo '<h5 class="card-title">' . htmlspecialchars($producto['nombre']) . '</h5>';
       echo '<button class="btn btn-detalle">Comprar';
       echo '<a href="/vistas/carrito.html">';

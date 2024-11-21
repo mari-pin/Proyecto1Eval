@@ -14,7 +14,7 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Enlace al archivo CSS -->
-    <link rel="stylesheet" href="/estilos/style2.css">
+    <link rel="stylesheet" href="../estilos/style2.css">
 </head>
 
 <body>
@@ -31,13 +31,13 @@
       <div class="collapse navbar-collapse flex-wrap" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index2.html">Inicio</a>
+            <a class="nav-link" href="../index2.html">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/vistas/productos.html">Productos</a>
+            <a class="nav-link" href="../controladores/principal.php">Productos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/../index2.html">Acerca de</a>
+            <a class="nav-link" href="../index2.html">Acerca de</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#footer">Contacto</a>
@@ -48,22 +48,27 @@
           <input class="form-control me-2 mb-2 mb-lg-0 mb-0 " type="search" placeholder="Buscar" aria-label="Buscar" />
 
           <!-- Icono cart -->
-          <a href="/vistas/detalle.html" class="ms-3  mb-2 mb-lg-0">
+          <a href="../controladores/detalle.php" class="ms-3  mb-2 mb-lg-0">
             <i class="fa-solid fa-magnifying-glass
             fs-5 mt-4 ms-4"></i>
           </a>
           <!-- Ícono de user -->
-          <a href="/vistas/inicioSesion.html" class="ms-3 mb-2 mb-lg-0">
+          <a href="../controladores/inicioSesion.php" class="ms-3 mb-2 mb-lg-0">
             <i class="fa-solid fa-user fs-5 mt-4 ms-4"></i></a>
           <!-- Enlace de registro -->
-          <a href="/vistas/registro.html" class="ms-3 mb-2 mb-lg-0">
+          <a href="../controladores/registro.php" class="ms-3 mb-2 mb-lg-0">
             <i class="fa-solid fa-user-plus fs-5 mt-4 ms-4"></i>
             <span class="registro-text">Registro</span>
           </a>
-          <a href="/vistas/carrito.html" class="ms-3 mb-2 mb-lg-0">
+          <a href="../controladores/carrito.php" class="ms-3 mb-2 mb-lg-0">
             <i class="fa-solid fa-cart-shopping fs-5 mt-4 ms-4"></i>
             <span class="registro-text">Carrito</span>
           </a>
+          <?php
+          if (isset($_SESSION['nombre'])) {
+              echo "<p class='ms-3 mb-2 mb-lg-0'>Bienvenido, " . htmlspecialchars($_SESSION['nombre']) . "</p>";
+          }
+          ?>
 
         </form>
       </div>

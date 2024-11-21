@@ -39,11 +39,9 @@ class Carrito{
             $dato= "¡Error!: " . $e->getMessage() . "<br/>";
             require "vistas/mensaje.php";
             die();
+
+            
         }
     }
 
-/*     public function guardar(){
-        $_SESSION['idCarrito'] = $this->idCarrito;
-        $_SESSION['id']
-    } */
 }

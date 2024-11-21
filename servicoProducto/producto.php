@@ -11,7 +11,7 @@ HARÁN EN PHP SIN SERVICIOS)
 Los servicios se crearán cada uno en una carpeta dentro de la carpeta principal del proyecto, y
 dentro de esta carpeta tendrán la misma estructura de carpetas que cualquier aplicación (con las
 carpetas clases, config, controladores …). */
-echo __DIR__;
+
 
 require  __DIR__."/config/autoload.php";
 
@@ -23,19 +23,19 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
 
     if(isset($_GET['idProducto'])){
         echo "hola";
-        $pro = new Producto($_GET['idProducto']);
-        $dato = $pro->buscar($base->link);
+        $producto = new Producto($_GET['idProducto']);
+        $dato = $producto->buscar($base->link);
         header("HTTP/1.1 200 OK");
         echo json_encode($dato);
         exit();
     }else{
-
         $dato = Producto::getAll($base->link);
         $dato->setFetchMode(PDO::FETCH_ASSOC);
         header("HTTP/1.1 200 OK");
         echo json_encode($dato->fetchAll());
         exit();
     }
+      
 }
 
 //En caso de que ninguna de las opciones anteriores se haya ejecutado

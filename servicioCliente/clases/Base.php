@@ -1,15 +1,15 @@
 <?php
-include __DIR__ . "../config/config.php";
+include __DIR__ . "/../config/config.php";
 
 class Base{
     private $link;
 
     function __construct(){
         try {
-            echo "Host: " . HOST . "<br>";
+           /*  echo "Host: " . HOST . "<br>";
             echo "Base: " . BASE . "<br>";
             echo "Usuario: " . USUARIO . "<br>";
-            echo "Pass: " . PASS . "<br>";
+            echo "Pass: " . PASS . "<br>"; */
             $this-> link = new PDO("mysql:host=".HOST.";dbname=".BASE, USUARIO, PASS, OPCIONES);
         
         } catch(PDOException $e){
