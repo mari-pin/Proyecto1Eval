@@ -7,15 +7,21 @@ $base = new Base();
 
 //obtengo los datos del servico
 $resultado= json_decode(file_get_contents("http://localhost/Proyecto/servicoProducto/producto.php"),true);
- 
 
- /* include "../vistas/productos.html";  */
+
+  if ($resultado && isset($resultado['productos'])) {
+  $productos = $resultado['productos'];
+} else {
+  $productos = [];
+} 
+
+ include "../vistas/productos.html";
 
 
 
 
 // Productos Destacados
-    echo '<section id="productos" class="py-5">';
+  /*   echo '<section id="productos" class="py-5">';
     echo '<div class="container-fluid">';
      echo '<h2 class="text-center mb-5 titulo">Nuestros Bombones</h2>';
      echo'<div class="row justify-content-center">';
@@ -41,6 +47,6 @@ $resultado= json_decode(file_get_contents("http://localhost/Proyecto/servicoProd
   
     echo ' </div>';
    echo '</div>';
-  echo'</section>';
+  echo'</section>'; */
   
   include "../vistas/finParcialProductos.html";
