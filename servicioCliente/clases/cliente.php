@@ -17,23 +17,9 @@ class Cliente{
     }
 
 
-    static function getAll($link){
-        try{
-            $consulta = "SELECT * FROM clientes";
-            $result = $link->prepare($consulta);
-            $result->execute();
-            return $result;
-        }catch(PDOException $e){
-            $dato= "¡Error!: " . $e->getMessage() . "<br/>";
-             require "../vistas/mensaje.php";
-             die();
-         }
-    }
-
-
     function buscar($link){
         try{
-            $consulta="SELECT * FROM clientes where email ='$this->email'";
+            $consulta="SELECT * FROM clientes where dniCliente ='$this->dniCliente'";
             $result=$link->prepare($consulta);
             $result->execute();
             return $result->fetch(PDO::FETCH_ASSOC);
@@ -44,23 +30,47 @@ class Cliente{
              die();
          }
     }
-
-    function validar($link){
+    public function validar($link) {
         try {
-        $cli = $this->buscar($link);
-        if(password_verify($this->pwd,$cli['pwd'])){
-            return $cli;
-        }else{
-            echo "Usuario o contraseña incorrectos.Comprueba tus datos o registrate";
-          
+            $cli = $this->buscar($link);
+            if ($cli) {
+                if (password_verify($this->pwd, $cli['pwd'])) {
+                    return $cli;
+                } else {
+                    echo "Usuario o contraseña incorrectos. Comprueba tus datos o regístrate.";
+                    return false;
+                }
+            } else {
+                echo "Usuario no encontrado. Comprueba tus datos o regístrate.";
+                return false;
+            }
+        } catch (PDOException $e) {
+            echo "¡Error!: " . $e->getMessage() . "<br/>";
             return false;
-        }   
+        }
+    }
+
+/*     function validar($link){
+        try {
+            $cli = $this->buscar($link);
+            if($cli){
+                if(password_verify($this->pwd,$cli['pwd'])){
+                    return $cli;
+                }else{
+                    echo "Usuario o contraseña incorrectos.Comprueba tus datos o registrate";
+                    return false;
+                }   
+            }else{
+                return false;
+            }
+       
+      
     }catch(PDOException $e){
         $dato= "¡Error!: " . $e->getMessage() . "<br/>";
          require "../vistas/mensaje.php";
          die();
      }
-    }
+    } */
 
 
 
@@ -75,7 +85,7 @@ class Cliente{
             $result->bindParam(':email', $email);
             $result->bindParam(':pwd', $pwd);
     
-            $idCliente = $this->idCliente;
+            $dniCliente = $this->dniCliente;
             $nombre = $this->nombre;
             $direccion = $this->direccion;
             $email = $this->email;
