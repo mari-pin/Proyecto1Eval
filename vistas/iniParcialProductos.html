@@ -67,8 +67,10 @@
           <?php
           if (isset($_SESSION['nombre'])) {
               echo "<p class='ms-3 mb-2 mb-lg-0'>Bienvenido, " . htmlspecialchars($_SESSION['nombre']) . "</p>";
+             echo " <a href='../controladores/session_destroy.php' class='ms-5'>Cerrar Sesion</a>";
           }
           ?>
+        
 
         </form>
       </div>
