@@ -26,7 +26,8 @@ if(isset($_POST['enviar'])){
             header("Location:principal.php");
             exit();
         } else {
-            echo "<p>Dni y contraseña incorrectos. Debes registrarte <a href='registro.php'>Registrarse</a></p>";
+            $dato.="<p>Dni y contraseña incorrectos. Debes registrarte <a href='registro.php'>Registrarse</a></p>";
+            echo $dato;
         }
     }
     include "principal.php";
