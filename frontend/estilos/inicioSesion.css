@@ -1,0 +1,116 @@
+/* Estilo adicional para el formulario de inicio de sesión */
+body {
+     /* Fondo claro */
+    font-family:'opens sans', sans-serif;/* Fuente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color:  #f8f2e7;
+
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: radial-gradient(circle, #f8f2e7, #a47760);
+    font-size: 16px;/*  */
+    width: 70%;
+    max-width: 400px;/*  */
+    padding: 10px;
+    margin: 10px 0;
+    border: 5px solid #ccc;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+
+form div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color:#f8f2e7;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    background-color: #a47760;
+    font-size: 15px;/*  */
+    width: 100%;/*  */
+   /*  height: 80%; */
+    padding: 10px;
+    margin: 10px 0;
+    border: 3px solid #ccc;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;/*  */
+    /* width: 60%; */max-width: 500px;
+/*     height: 60%;
+ */    background-color: #f8f2e7;
+}
+
+.login-container h2 {
+    margin-top: 25px;
+    font-weight: 600;
+    color: #5c3d2e;
+    font-size: 20px;
+    word-wrap: break-word;
+}
+.login-container p a{
+    font-size: 20px;
+    color: #eea45b;
+    font-weight: 600;
+  
+    
+}
+form button a{
+    font-weight: 600;
+    color:#f8f2e7;
+    text-decoration: none;
+}
+/* estilo de todos los botones */
+.btn-detalle {  
+    
+    max-width: 50%;
+    background-color: #5c3d2e;
+    color: #fffefe;
+    border: 2px solid #fffefe;
+    padding: 10px 20px;
+    margin:auto;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+  
+    
+
+}
+
+.btn-detalle:hover {
+    transition: color 0.3s ease, background-color 0.3s ease;
+    background-color: #a47760;
+    color: #fffefe;
+    font-weight: bold;
+    border: 2px solid #fffefe;
+
+   
+   
+}
+
+.btn-outline-dark {
+    color: #5c3d2e;
+    border-color: #5c3d2e;
+}
+
+.btn-outline-dark:hover {
+    color: #fff;
+    background-color: #5c3d2e;
+    border-color: #5c3d2e;
+}
