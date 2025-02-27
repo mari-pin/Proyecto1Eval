@@ -38,11 +38,9 @@ class Cliente{
                 if (password_verify($this->pwd, $cli['pwd'])) {
                     return $cli;
                 } else {
-                    echo "Usuario o contraseña incorrectos. Comprueba tus datos o regístrate.";
                     return false;
                 }
             } else {
-                echo "Usuario no encontrado. Comprueba tus datos o regístrate.";
                 return false;
             }
         } catch (PDOException $e) {

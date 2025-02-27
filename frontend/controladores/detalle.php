@@ -1,19 +1,13 @@
 <?php
-session_start();
-require "../config/autoload.php";
-include "../vistas/iniParcialProductos.html";
+require "../vistas/inicio.php";
+require "../vistas/nav.php";
 
-$base = new Base();
 $idProducto = $_GET['idProducto']??1;
 //obtengo los datos del servico
-$resultado= json_decode(file_get_contents("http://localhost/Proyecto/api/servicoProducto/producto.php"),true);
+$resultado= json_decode(file_get_contents("http://localhost/IbañezRosalenMaria_Proyect1T/api/servicioProducto/producto.php?idProducto=$idProducto"),true);
+
+require "../vistas/detalle.php";
 
 
 
-
-
-include "../vistas/detalle.html";
-
-
-
-include "../vistas/finParcialProductos.html";
+require "../vistas/footeryfin.php";

@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $resultado = $cli->validar($base->link);
             //$_SESSION['nombre'] = $resultado['nombre'];
             header("HTTP/1.1 200 OK");
+           
             echo json_encode($resultado);
         } else {
             echo "sus dato no estan registrados";

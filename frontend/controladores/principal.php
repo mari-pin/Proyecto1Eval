@@ -1,21 +1,14 @@
 <?php
-session_start();
-require "../config/autoload.php";
-include "../vistas/iniParcialProductos.html";
-
+require "../vistas/inicio.php";
+require "../vistas/nav.php";
 
 
 //obtengo los datos del servico
-$resultado= json_decode(file_get_contents("http://localhost/Proyecto/api/servicoProducto/producto.php"),true);
+$resultado= json_decode(file_get_contents("http://localhost/IbañezRosalenMaria_Proyect1T/api/servicioProducto/producto.php"),true);
 
 
-  if ($resultado && isset($resultado['productos'])) {
-  $productos = $resultado['productos'];
-} else {
-  $productos = [];
-} 
 
- include "../vistas/productos.html";
+require "../vistas/productos.php";
 
   
-  include "../vistas/finParcialProductos.html";
+require "../vistas/footeryfin.php";
