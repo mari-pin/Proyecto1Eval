@@ -5,25 +5,39 @@ class Carrito
 	private $idProducto;
 	private $cantidad;
 	private $precioUnidad;
-	private $precioTotal;
+	
 	private $dniCliente;
 
 
-	public function __construct($idCarrito, $idProducto, $cantidad, $precioUnidad, $precioTotal, $dniCliente)
+	public function __construct($idCarrito, $idProducto, $cantidad, $precioUnidad, $dniCliente)
 	{
-		$this->idPedido = $idCarrito;
-		$this->idProducto = $idProducto;	
+		$this->idCarrito = $idCarrito;
+		$this->idProducto = $idProducto;
 		$this->cantidad = $cantidad;
 		$this->precioUnidad = $precioUnidad;
-		$this->precioTotal = $precioTotal;
+		
 		$this->dniCliente = $dniCliente;
 	}
 
+	function getAll($link){
+		
+	
+		try {
+			$consulta = $link->prepare("SELECT * FROM carrito where dniCliente = '$this->dniCliente'");
+			$consulta->execute();
+			return $consulta;
+		} catch (PDOException $e) {
+			$dato = "¡Error!: buscar" . $e->getMessage() . "<br/>";
+			echo $dato;
+			die();
+		}
+	
+	}
 
 	function Buscar($link)
 	{
 		try {
-			$consulta = $link->prepare("SELECT * FROM carrito where dniCliente = '$this->dniCliente'");
+			$consulta = $link->prepare("SELECT * FROM carrito where dniCliente = '$this->dniCliente' and idProducto = '$this->idProducto'");
 			$consulta->execute();
 			return $consulta;
 		} catch (PDOException $e) {
@@ -39,19 +53,33 @@ class Carrito
 			$consulta->execute();
 			$nlinea = $consulta->fetchColumn() + 1;
 
-			/* $consulta = $link->prepare("INSERT into carrito (idCarrito, idProducto, nlinea, cantidad, precioUnidad, precioTotal, dniCliente) values ('$this->idCarrito','$this->idProducto', '$nlinea', '$this->cantidad', '$this->precioUnidad', '$this->precioTotal','$this->dniCliente')");
+			$consulta = $link->prepare("INSERT into carrito (idCarrito, idProducto, nlinea, cantidad, precioUnidad, dniCliente) values ('$this->idCarrito','$this->idProducto', '$nlinea', '$this->cantidad', '$this->precioUnidad','$this->dniCliente')");
 			$consulta->execute();
-		 */
+		} catch (PDOException $e) {
+			$dato = "¡Error!: insertar algo" . $e->getMessage() . "<br/>";
+			echo $dato;
+			die();
+		}
+	}
+
+	 static function nuevaLinea($link)
+	{
+		try {
+			$consulta = $link->prepare("SELECT count(*) FROM carrito");
+			$consulta->execute();
+			return $consulta->fetchColumn()+1;
+			
 		} catch (PDOException $e) {
 			$dato = "¡Error!: insertar" . $e->getMessage() . "<br/>";
 			echo $dato;
 			die();
 		}
 	}
+
 	function borrar($link)
 	{
 		try {
-			if ($this->idProducto !== 0 ){
+			if ($this->idProducto !== 0) {
 				$consulta = "DELETE FROM carrito where dniCliente = '$this->dniCliente'and idProducto ='$this->idProducto'";
 			} else {
 				$consulta = "DELETE FROM carrito where dniCliente = '$this->dniCliente'";
@@ -86,6 +114,4 @@ class Carrito
 	{
 		$this->$var = $value;
 	}
-
-	
 }

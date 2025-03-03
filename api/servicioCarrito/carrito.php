@@ -11,8 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     if (isset($_GET['dniCliente'])) {
 
-         $carrito = new Carrito(0, 0,0,0, 0, $_GET['dniCliente'] );
-         $datos = $carrito->Buscar($base->link);
+         $carrito = new Carrito(0, 0,0,0,$_GET['dniCliente'] );
+         $datos = $carrito->getAll($base->link);
          
         if($datos){
             $datos = json_encode($datos->fetchAll());
@@ -36,10 +36,10 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
 
         if(isset($datos['idProducto'])){
 
-            $carrito = new Carrito(0, $datos['idProducto'], 0, 0, 0, $datos['dniCliente']);
+            $carrito = new Carrito(0, $datos['idProducto'], 0, 0, $datos['dniCliente']);
 
         }else{
-            $carrito = new Carrito(0, 0, 0, 0, 0, $datos['dniCliente']);
+            $carrito = new Carrito(0, 0, 0, 0, $datos['dniCliente']);
 
         }
         $carrito->borrar($base->link);
@@ -50,8 +50,9 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
    }else{
     if(isset($datos['dniCliente'], $datos['idProducto'], $datos['cantidad'])){
 
-        $carrito = new Carrito(0, $datos['idProducto'], $datos['cantidad'], 0, 0, $datos['dniCliente']);
-       $resultado = $carrito->buscar($base->link);
+        $carrito = new Carrito(0, $datos['idProducto'], $datos['cantidad'], 0, $datos['dniCliente']);
+       $resultado = $carrito->Buscar($base->link);
+  
       $resultado =  $resultado->fetch(PDO::FETCH_ASSOC);
 
       if($resultado){
@@ -64,8 +65,10 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
       }else{
 
         if(isset($datos['precioUnidad'])){
-            $carrito = new Carrito(0, $datos['idProducto'], $datos['cantidad'], $datos['precioUnidad'], ((int)$datos['cantidad'])*((float)$datos['precioUnidad']), $datos['dniCliente']);
+            $carrito = new Carrito(Carrito::nuevaLinea($base->link), $datos['idProducto'], $datos['cantidad'], $datos['precioUnidad'], $datos['dniCliente']);
+          
             $carrito->Insertar($base->link);
+        
 
         }
     

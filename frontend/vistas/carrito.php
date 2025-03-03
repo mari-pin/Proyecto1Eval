@@ -5,7 +5,8 @@
     <h2 class="text-center mb-4">Carrito de Compras</h2>
   
     <!-- Tabla de productos en el carrito -->
-    <table class="table tabla-hover carrito-tabla">
+<form action="" method="post">
+<table class="table tabla-hover carrito-tabla">
       <thead>
         <tr>
           <th>Producto</th>
@@ -22,11 +23,11 @@
             <td><?php echo htmlspecialchars($linea['idProducto']); ?></td>
             <td>
               <div class="input-group div_cantidad">
-                <input type="number" class="form-control text-center" value="<?php echo $linea['cantidad']; ?>" min="1">
+                <input type="number" class="form-control text-center" value="<?php echo $linea['cantidad']; ?>" min="1" name="<?=$linea['idProducto']?>">
               </div>
             </td>
             <td>$<?php echo number_format($linea['precioUnidad'], 2); ?></td>
-            <td>$<?php echo number_format($linea['precioTotal'], 2); ?></td>
+            <td>$<?php echo number_format($linea['precioUnidad'] * $linea['cantidad'], 2); ?></td>
             <td>
               <form method="POST" action="eliminar_linea.php">
                 <input type="hidden" name="idProducto" value="<?php echo $linea['idProducto']; ?>">
@@ -62,9 +63,10 @@
   
     <!-- Botones de acción -->
     <div class="text-center mt-4 row w-100 div_btnes_carrito">
-      <button class="btn btn-secondary me-2 col-3 "><a href="carrito.html">Actualizar Carrito</a></button>
+      <input type="submit" class="btn btn-secondary me-2 col-3 " name="actualizar" value="Actualizar Carrito">
       <button class="btn btn-primary me-2 col-3"><a href="../vistas/confirmar_Pedido.html">Confirmar Pedido</a></button>
       <button class="btn btn-success col-3"><a href="productos.html">Seguir Comprando</a></button>
     </div>
+</form>
   </section>
 </section>

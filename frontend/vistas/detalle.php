@@ -11,7 +11,7 @@
       <h2 class="product-name"><?php echo htmlspecialchars($resultado['nombre']); ?></h2>
       <hr>
 
-      <hr>
+      <hr>                                             
       <!-- Información Relevante -->
       <ul class="list-unstyled fs-4">
         <li><strong>Precio por unidad:</strong><?php echo htmlspecialchars($resultado['precio']); ?></li>
@@ -21,7 +21,7 @@
       </ul>
       <hr>
 
-      <form action="" method="post">
+      <form action="./carrito.php" method="post">
         <!-- Botónes para añadir al carrito -->
         <div class="text-center mb-4">
           <div class="quantity-container">
