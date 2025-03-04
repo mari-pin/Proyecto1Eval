@@ -1,5 +1,4 @@
 
-
     <section class="section_carrito">
         <!-- Formalización del Pedido -->
         <section class="container w-100 my-5">

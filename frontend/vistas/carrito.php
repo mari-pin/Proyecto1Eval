@@ -43,20 +43,7 @@
           <td colspan="5" class="text-center">El carrito está vacío.</td>
         </tr>
       <?php endif; ?>
-        <!-- una línea de producto -->
-       <!--  <tr>
-          <td>Bombón de Chocolate Puro</td>
-          <td>
-            <div class="input-group div_cantidad">
-            
-              <input type="number" class="form-control text-center" value="1" min="1">
-           
-            </div>
-          </td>
-          <td>$5.00</td>
-          <td>$5.00</td>
-          <td><button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
-        </tr> -->
+     
         
       </tbody>
     </table>
@@ -64,8 +51,8 @@
     <!-- Botones de acción -->
     <div class="text-center mt-4 row w-100 div_btnes_carrito">
       <input type="submit" class="btn btn-secondary me-2 col-3 " name="actualizar" value="Actualizar Carrito">
-      <button class="btn btn-primary me-2 col-3"><a href="../vistas/confirmar_Pedido.html">Confirmar Pedido</a></button>
-      <button class="btn btn-success col-3"><a href="productos.html">Seguir Comprando</a></button>
+      <button class="btn btn-primary me-2 col-3"><a href="./confirmar_pedido.php?confirmar">Confirmar Pedido</a></button>
+      <button class="btn btn-success col-3"><a href="./principal.php">Seguir Comprando</a></button>
     </div>
 </form>
   </section>

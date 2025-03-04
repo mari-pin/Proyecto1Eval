@@ -9,45 +9,51 @@ $base = new Base();
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
-    if (isset($_GET['dniCliente'])) {
-
-         $carrito = new Carrito(0, 0,0,0,$_GET['dniCliente'] );
-         $datos = $carrito->getAll($base->link);
-         
-        if($datos){
-            $datos = json_encode($datos->fetchAll());
-         echo $datos;
-             
-        }else{
-            echo json_encode('[]');
-        }
-
-       
-    } else {
-        echo "error:faltan datos";
-    }
-}
-if($_SERVER['REQUEST_METHOD'] === "POST"){
-
-
-   if(isset($datos['eliminar'])){
+    if(isset($_GET['eliminar'])){
      
-    if(isset($datos['dniCliente'])){
-
-        if(isset($datos['idProducto'])){
-
-            $carrito = new Carrito(0, $datos['idProducto'], 0, 0, $datos['dniCliente']);
-
-        }else{
-            $carrito = new Carrito(0, 0, 0, 0, $datos['dniCliente']);
-
+        if(isset($_GET['dniCliente'])){
+    
+            if(isset($_GET['idProducto'])){
+    
+                $carrito = new Carrito(0, $_GET['idProducto'], 0, 0, $_GET['dniCliente']);
+    
+            }else{
+                $carrito = new Carrito(0, 0, 0, 0, $_GET['dniCliente']);
+    
+            }
+            $carrito->borrar($base->link);
+            echo json_encode('el carrito se ha eliminado');
+    
         }
-        $carrito->borrar($base->link);
-        echo json_encode('el carrito se ha eliminado');
+    
+       }else{
 
-    }
+        if (isset($_GET['dniCliente'])) {
 
-   }else{
+            $carrito = new Carrito(0, 0,0,0,$_GET['dniCliente'] );
+            $datos = $carrito->getAll($base->link);
+            
+           if($datos){
+               $datos = json_encode($datos->fetchAll());
+            echo $datos;
+                
+           }else{
+               echo json_encode('[]');
+           }
+   
+          
+       } else {
+           echo "error:faltan datos";
+       }
+   
+
+       }
+
+  
+}
+
+if($_SERVER['REQUEST_METHOD'] === "POST"){
+  
     if(isset($datos['dniCliente'], $datos['idProducto'], $datos['cantidad'])){
 
         $carrito = new Carrito(0, $datos['idProducto'], $datos['cantidad'], 0, $datos['dniCliente']);
@@ -82,4 +88,3 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
    }
 
 
-}
