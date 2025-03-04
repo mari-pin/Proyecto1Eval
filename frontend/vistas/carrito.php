@@ -29,12 +29,8 @@
             <td>$<?php echo number_format($linea['precioUnidad'], 2); ?></td>
             <td>$<?php echo number_format($linea['precioUnidad'] * $linea['cantidad'], 2); ?></td>
             <td>
-              <form method="POST" action="eliminar_linea.php">
-                <input type="hidden" name="idProducto" value="<?php echo $linea['idProducto']; ?>">
-                <input type="submit" class="btn btn-danger btn-sm value="eliminar">
-                  <i class="fas fa-trash-alt"></i> 
-                </input>
-              </form>
+             
+              <a href="./carrito.php?eliminar&idProducto=<?php echo $linea['idProducto']; ?>">Eliminar</a>
             </td>
           </tr>
         <?php endforeach; ?>

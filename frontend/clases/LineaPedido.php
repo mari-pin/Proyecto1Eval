@@ -46,8 +46,8 @@ class LineaPedido{
      function insertar($link){
         $this->nlinea = $this->nuevaLinea($link);
         try {
-            $consulta = "INSERT INTO pedidos (idPedido, nlinea, idProducto, cantidad, precioProducto, nombreProducto, precioTotal) VALUES  '$this->idPedido','$this->nlinea', '$this->idProducto', '$this->cantidad', '$this->precioProducto', '$this->nombreProducto', '$this->precioTotal'";
-            $result=$link->prepare($consulta);
+          
+            $result=$link->prepare("INSERT INTO `lineaspedidos` (`idPedido`, `nlinea`, `idProducto`, `cantidad`, `precioProducto`, `nombreProducto`, `precioTotal`) VALUES ('$this->idPedido', '$this->nlinea', '$this->idProducto', '$this->cantidad', '$this->precioProducto', '$this->nombreProducto', '$this->precioTotal')");
 			$result->execute();
 			return $result;
 		}

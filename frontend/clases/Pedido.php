@@ -19,13 +19,13 @@ class Pedido{
 
      function insertar($link){
         try {
-            $consulta = "INSERT INTO pedidos (idPedido, fecha, dirEntrega, dniCliente, nombreCliente) VALUES  '$this->idPedido', '$this->fecha', '$this->dirEntrega', '$this->dniCliente', '$this->nombreCliente'";
-            $result=$link->prepare($consulta);
+           
+            $result=$link->prepare("INSERT INTO `pedidos` (`idPedido`, `fecha`, `dirEntrega`, `dniCliente`, `nombreCliente`) VALUES ('$this->idPedido', '$this->fecha', '$this->dirEntrega', '$this->dniCliente', '$this->nombreCliente')");
 			$result->execute();
 			return $result;
 		}
 		catch(PDOException $e){
-			$dato= "¡Error!: " . $e->getMessage() . "<br/>";
+			$dato= "¡Error!:insertar " . $e->getMessage() . "<br/>";
 			 echo $dato;
 			 die();
 		 }

@@ -14,7 +14,7 @@ if(isset($_POST['enviar'])){
         $url = "http://localhost/IbañezRosalenMaria_Proyect1T/api/servicioCliente/cliente.php?dniCliente=" . urlencode($dniCliente) . "&pwd=" . urlencode($pwd);
         $resultado = json_decode(file_get_contents($url), true);
 
-        var_dump($resultado);
+     
     
         // Verificar si la respuesta es válida
         if ($resultado && !isset($resultado['error'])) {
@@ -24,14 +24,14 @@ if(isset($_POST['enviar'])){
             $_SESSION['nombre'] = $resultado['nombre'];
     
             // Redirigir a inicio
-           // header("Location:principal.php");
+           header("Location:principal.php");
             exit();
         } else {
             $dato.="<p>Dni y contraseña incorrectos. Debes registrarte <a href='registro.php'>Registrarse</a></p>";
             echo $dato;
         }
     
-   // header("Location:principal.php");
+    header("Location:principal.php");
 
   
 

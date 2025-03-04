@@ -63,8 +63,9 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
 
       if($resultado){
 
-        if($datos['cantidad'] == 0){
-            $carrito->cantidad = $resultado['cantidad'] +1;
+        if(!isset($datos['actualizar'])){
+         
+            $carrito->cantidad += $resultado['cantidad'] ;
         }
 
          $carrito->modificar($base->link);
