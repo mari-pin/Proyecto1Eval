@@ -45,7 +45,7 @@ if (isset($_POST['enviar'])) {
     // Cerrar la conexión
     curl_close($ch);
 
-    echo $resultado;
+    //echo $resultado;
     header('Location:carrito.php');
 } elseif (isset($_POST['actualizar'])) {
     //var_dump($_POST);
@@ -54,7 +54,7 @@ if (isset($_POST['enviar'])) {
     foreach ($lineas as $linea) {
         $dato =  $_POST[$linea['idProducto']];
         if ($dato !== $linea['cantidad']) {
-            echo $linea['idProducto'];
+           // echo $linea['idProducto'];
             $datos = [
                 'actualizar'=>'',
                 'idProducto' => $linea['idProducto'],

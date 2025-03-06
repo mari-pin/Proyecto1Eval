@@ -1,7 +1,8 @@
 <?php
 session_start();
-require "./clases/Carrito.php";
-require "./clases/Base.php";
+require "./config/autoload.php";
+//require "./clases/Carrito.php";
+//require "./clases/Base.php";
 
 $datos = json_decode(file_get_contents('php://input'), true);
 
@@ -31,11 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         if (isset($_GET['dniCliente'])) {
 
             $carrito = new Carrito(0, 0,0,0,$_GET['dniCliente'] );
-            $datos = $carrito->getAll($base->link);
+            $datosCarrito = $carrito->getAll($base->link);
             
-           if($datos){
-               $datos = json_encode($datos->fetchAll());
-            echo $datos;
+           if($datosCarrito){
+               $datosCarrito = json_encode($datosCarrito->fetchAll());
+            echo $datosCarrito;
                 
            }else{
                echo json_encode('[]');

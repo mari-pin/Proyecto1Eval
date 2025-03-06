@@ -2,6 +2,8 @@
 class Producto{
 
     private $idProducto;
+
+	
 	function __construct($idProducto){
 		$this->idProducto=$idProducto;
 		

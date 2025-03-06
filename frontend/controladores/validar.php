@@ -33,6 +33,8 @@ if(isset($_POST['enviar'])){
     
     header("Location:principal.php");
 
+
+    
   
 
 }else{

@@ -26,7 +26,6 @@ class Cliente{
             
         }catch(PDOException $e){
             $dato= "¡Error!: " . $e->getMessage() . "<br/>";
-             //require "../vistas/mensaje.php";
              echo $dato;
              die();
          }
@@ -73,7 +72,6 @@ class Cliente{
         }catch(PDOException $e){
         $dato= "¡Error!: " . $e->getMessage() . "<br/>";
 
-       //  require "../vistas/mensaje.php";
          echo $dato;
          die();
      }

@@ -1,6 +1,8 @@
 <?php
-require  "./clases/Base.php";
-require  "./clases/Producto.php";
+require "./config/autoload.php";
+
+//require  "./clases/Base.php";
+//require  "./clases/Producto.php";
 
 
 $base = new Base();

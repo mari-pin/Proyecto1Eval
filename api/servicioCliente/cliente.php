@@ -1,7 +1,8 @@
 <?php
 session_start();
-require "./clases/Cliente.php";
-require "./clases/Base.php";
+require "./config/autoload.php";
+//require "./clases/Cliente.php";
+//require "./clases/Base.php";
 
 $datos = json_decode(file_get_contents('php://input'), true);
 
@@ -17,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             if ($cli) {
                 // Validar cliente
                 $resultado = $cli->validar($base->link);
-                //$_SESSION['nombre'] = $resultado['nombre'];
+               
                 header("HTTP/1.1 200 OK");
 
                 echo json_encode($resultado);
